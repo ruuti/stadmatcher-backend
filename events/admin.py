@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from models import Team, League, Sport, Event, Arena
+from events.models import Team, League, Sport, Event, Arena
 
 class ArenaAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'city')
