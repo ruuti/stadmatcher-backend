@@ -6,12 +6,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from events.helpers import get_events_cache_key
 from django.core.cache import cache
+from datetime import datetime
 
 class EventList(APIView):
     """
     List all events.
     """
     def get(self, request, format=None):
+        today_midnight = datetime.now().date()
         cache_key = get_events_cache_key()
         cache_time = 3600
         result = cache.get(cache_key)
