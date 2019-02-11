@@ -24,7 +24,7 @@ defaults: &defaults
 
 version: 2
 jobs:
-  deploy_to_dev:
+  deploy_to_prod:
     <<: *defaults
     steps:
       - checkout
