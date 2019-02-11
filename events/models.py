@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import models
 
 import uuid
@@ -16,20 +13,20 @@ class Arena(models.Model):
 	city = models.CharField(max_length=250, null=False)
 	
 	def __str__(self):
-		return self.title.encode('utf-8')
+		return self.title
 
 class Sport(models.Model):
 	title = models.CharField(max_length=250, null=False)
 	
 	def __str__(self):
-		return self.title.encode('utf-8')
+		return self.title
 
 class League(models.Model):
 	title = models.CharField(max_length=250, null=False)
 	sport = models.ForeignKey(Sport, on_delete=models.CASCADE, null=False, related_name='sport')
 	
 	def __str__(self):
-		return self.title.encode('utf-8')
+		return self.title
 
 class Team(models.Model):
 	title = models.CharField(max_length=250, null=False)
@@ -37,7 +34,7 @@ class Team(models.Model):
 	logo = models.ImageField(upload_to=get_file_path, null=True)
 
 	def __str__(self):
-		return self.title.encode('utf-8')
+		return self.title
 
 class Event(models.Model):
 
