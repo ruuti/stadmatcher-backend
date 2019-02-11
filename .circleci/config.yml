@@ -41,7 +41,7 @@ jobs:
           command: rsync -avce ssh --exclude 'db.sqlite3' --exclude 'Pipfile' --exclude '.git/' --exclude '.circleci/' ./ $DEPLOYMENT_USER@$IP:$DEPLOYMENT_PATH_BACKEND
       - run:
           name: Setup proccess
-          command: ssh $DEPLOYMENT_USER@$IP './setup_api.sh'
+          command: ssh $DEPLOYMENT_USER@$IP './setup_backend.sh'
 workflows:
   version: 2
   build_and_deploy_to_prod:
