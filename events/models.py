@@ -64,4 +64,4 @@ def clear_cache_handle(sender, instance, **kwargs):
 	Delete cache automatically when data changes
 	"""
 	events_cache_key = get_events_cache_key()
-	cache.delete_many(['cities', 'events_cache_key'])
+	cache.delete_many(['cities', events_cache_key])
