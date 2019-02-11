@@ -2,7 +2,7 @@ aliases:
   - &install-tools
     name: Install tools
     command: |
-      sudo apt-get install rsync -y
+      sudo apt-get install rsync postgresql postgresql-contrib -y
   - &fix-permissions
     name: Fix permissions
     command: |
