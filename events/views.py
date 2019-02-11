@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from events.models import Event, Sport, Arena
 from events.serializers import EventSerializer, SportSerializer, CitySerializer
 from django.http import Http404
