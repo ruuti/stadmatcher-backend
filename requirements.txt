@@ -6,3 +6,4 @@ Pillow==5.4.1
 psycopg2==2.7.7
 gunicorn==19.9.0
 python-memcached==1.59
+django-dbbackup==3.2.0
