@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from rest_framework import serializers
 from events.models import Event, Team, Arena, Sport, League
 from backend import settings

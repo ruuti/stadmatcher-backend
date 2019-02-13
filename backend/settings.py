@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'events',
-    'corsheaders'
+    'corsheaders',
+    'dbbackup'
 ]
 
 MIDDLEWARE = [
@@ -164,3 +165,6 @@ if(ENVIRONMENT == 'production'):
     BASE_URL = 'https://api.stadmatcher.se'
 else:
     BASE_URL = 'http://127.0.0.1:8000'
+
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': '/var/backups'}

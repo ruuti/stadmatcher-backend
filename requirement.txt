@@ -1,5 +1,0 @@
-Django==2.1.7
-djangorestframework==3.9.1
-django-cors-headers==2.4.0
-beautifulsoup4==4.7.1
-Pillow==5.4.1

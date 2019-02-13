@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from events.models import Event, Sport, Arena
 from events.serializers import EventSerializer, SportSerializer, CitySerializer
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from datetime import datetime
+from events.helpers import get_events_cache_key
 from django.core.cache import cache
+from datetime import datetime
 
 class EventList(APIView):
     """
@@ -15,7 +14,7 @@ class EventList(APIView):
     """
     def get(self, request, format=None):
         today_midnight = datetime.now().date()
-        cache_key = 'events_'+str(today_midnight)
+        cache_key = get_events_cache_key()
         cache_time = 3600
         result = cache.get(cache_key)
         if not result:
